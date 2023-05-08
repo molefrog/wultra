@@ -8,10 +8,9 @@ const Home = () => {
       <h1>Welcome</h1>
       <br />
       <p>
-        <code>AI-generated</code> Welcome to our test website! Here, we demonstrate how to use the
-        <i>wouter</i> and <i>ultra</i> libraries together to create beautiful and functional web
-        applications. Our website includes examples of routing, state management, and more, and we
-        hope to inspire you to use these powerful tools in your own projects.
+        This demo project shows how wouter can be used with Ultra.js, a Deno framework. The upcoming
+        2.11.0 release of wouter has a built-in support for server-side rendering via a simple prop
+        for defining server-side location.
       </p>
     </>
   );
@@ -22,15 +21,41 @@ const SSR = () => {
     <>
       <p>
         In order to render your app on the server, you'll need to wrap your app with top-level
-        Router and specify <code>ssrPath</code> prop (usually, derived from current request). Once
-        hydrated, your app will start using browser location as usual.
+        <code>Router</code> and specify <code>ssrPath</code> prop (usually, derived from current
+        request).
       </p>
 
+      <pre>{`import { renderToString } from "react-dom/server";
+import { Router } from "wouter";
+
+const handleRequest = (req, res) => {
+  // top-level Router is mandatory in SSR mode
+  const prerendered = renderToString(
+    <Router ssrPath={req.path}>
+      <App />
+    </Router>
+  );
+
+  // respond with prerendered html
+};`}</pre>
+      <p>
+        On the client, the static markup must be hydrated in order for your app to become
+        interactive.
+      </p>
+
+      <pre>{`import { hydrateRoot } from "react-dom/server";
+
+const root = hydrateRoot(
+  domNode,
+  // during hydration \`ssrPath\` is set to \`location.pathname\`
+  <Router>
+    <App />
+  </Router>
+);`}</pre>
+
       <blockquote>
-        ❕ It's important that your JSX markup is the same on the server and in the browser. This
-        ensures that the app can be properly hydrated. Hence, the top-level{" "}
-        <code>{"<Router />"}</code> must be present, and <code>ssrPath</code> prop should be devired
-        from browser location on the client (e.g. <code>location.pathname</code>).
+        ❕ <b>Note</b> that to avoid having hydration warnings, the JSX rendered on the client must
+        match the one used by the server, so the <code>Router</code> component must be present.
       </blockquote>
     </>
   );
