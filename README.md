@@ -1,10 +1,10 @@
-# Deno Starter
+# wultra = Ultra + Wouter
 
-This is a Deno project running on Docker in Codesandbox.
+This demo project shows how [wouter](https://github.com/molefrog/wouter) can be used with [Ultra.js](https://ultrajs.dev/), a Deno framework.
+The upcoming 2.11.0 release of wouter has a built-in support for server-side rendering via a simple prop `ssrPath` for defining server-side location. 
 
-Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) to optimize it for [CodeSandbox](https://codesandbox.io/p/dashboard).
+Other wouter features used here:
 
-## Resources
-
-- [CodeSandbox Projects — Docs](https://codesandbox.io/docs/projects)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
+- Active links
+- Catch-all (404) route
+- Nested routing _todo_
