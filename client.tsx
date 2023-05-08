@@ -7,7 +7,7 @@ import { SearchParamsProvider } from "./src/wouter/index.tsx";
 
 function ClientApp() {
   return (
-    <Router ssrPath={window.location.pathname}>
+    <Router>
       <SearchParamsProvider value={new URLSearchParams(window.location.search)}>
         <App />
       </SearchParamsProvider>
