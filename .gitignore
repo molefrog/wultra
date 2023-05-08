@@ -1,1 +1,3 @@
 .vscode/
+.ultra
+deno.lock
