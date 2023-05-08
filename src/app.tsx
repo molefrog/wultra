@@ -1,5 +1,6 @@
 import useAsset from "ultra/hooks/use-asset.js";
 import { Link, Route, Switch } from "wouter";
+import { ActiveLink } from "./components/ActiveLink.tsx";
 
 const Home = () => {
   return (
@@ -55,11 +56,17 @@ export default function App() {
           <h1>◈ wultra </h1>
           <p>ultra + wouter</p>
           <nav>
-            <Link href="/">Home</Link>
+            <ActiveLink boldWhenActive href="/">
+              Home
+            </ActiveLink>
             {" / "}
-            <Link href="/ssr">SSR setup</Link>
+            <ActiveLink boldWhenActive href="/ssr">
+              SSR setup
+            </ActiveLink>
             {" / "}
-            <Link href="/usage">Elements</Link>
+            <ActiveLink boldWhenActive href="/usage">
+              Elements
+            </ActiveLink>
             {" · "}
             <a href="https://github.com/molefrog/wouter" target="_blank">
               wouter↗
