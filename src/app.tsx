@@ -1,6 +1,8 @@
 import useAsset from "ultra/hooks/use-asset.js";
-import { Link, Route, Switch } from "wouter";
-import { ActiveLink } from "./components/ActiveLink.tsx";
+import { Route, Switch } from "wouter";
+
+import { Header } from "./components/Header.tsx";
+import { RouteWithLocale } from "./wouter/RouteWithLocale.tsx";
 
 // pages
 import HomePage from "./pages/Home.tsx";
@@ -22,40 +24,22 @@ export default function App() {
         />
       </head>
       <body>
-        <header>
-          <h1>◈ wultra </h1>
-          <p>ultra + wouter</p>
-          <nav>
-            <ActiveLink boldWhenActive href="/">
-              Home
-            </ActiveLink>
-            {" / "}
-            <ActiveLink boldWhenActive href="/ssr">
-              SSR setup
-            </ActiveLink>
-            {" / "}
-            <ActiveLink boldWhenActive href="/usage">
-              Elements
-            </ActiveLink>
-            {" · "}
-            <a href="https://github.com/molefrog/wouter" target="_blank">
-              wouter↗
-            </a>
-          </nav>
-        </header>
+        <RouteWithLocale defaultLocale="en">
+          <Header />
 
-        <Switch>
-          <Route path="/" component={HomePage} />
-          <Route path="/ssr" component={SsrPage} />
+          <Switch>
+            <Route path="/" component={HomePage} />
+            <Route path="/ssr" component={SsrPage} />
 
-          <Route>
-            <center>
-              <h1>Not Found 🕵️</h1>
-              <br />
-              <p>That's 404. There is nothing to render.</p>
-            </center>
-          </Route>
-        </Switch>
+            <Route>
+              <center>
+                <h1>Not Found 🕵️</h1>
+                <br />
+                <p>That's 404. There is nothing to render.</p>
+              </center>
+            </Route>
+          </Switch>
+        </RouteWithLocale>
       </body>
     </html>
   );
