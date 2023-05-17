@@ -29,7 +29,9 @@ export const Header = () => {
   return (
     <header>
       <h1>◈ {HEADING_TRANSLATIONS[locale]}</h1>
-      <p>ultra + wouter</p>
+      <p>
+        <small>wouter + Deno + Ultra demo</small>
+      </p>
 
       <nav>
         <ActiveLink boldWhenActive href="/">
@@ -43,10 +45,16 @@ export const Header = () => {
         <ActiveLink boldWhenActive href="/usage">
           Elements
         </ActiveLink>
-        {" · "}
-        <a href="https://github.com/molefrog/wouter" target="_blank">
-          wouter↗
-        </a>
+        &nbsp;&nbsp;
+        <small>
+          <a href="https://github.com/molefrog/wouter" target="_blank">
+            wouter↗
+          </a>
+          {" · "}
+          <a href="https://ultrajs.dev/" target="_blank">
+            Ultra↗
+          </a>
+        </small>
       </nav>
 
       <select value={locale} onChange={changeLang}>
