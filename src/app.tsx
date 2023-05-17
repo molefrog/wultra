@@ -15,7 +15,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <title>Ultra + Wouter</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href={useAsset("/favicon.ico")} />
+        <link rel="shortcut icon" href={useAsset("/favicon.svg")} type="image/svg+xml" />
 
         <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
         <link
