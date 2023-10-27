@@ -4,7 +4,6 @@ import App from "./src/app.tsx";
 
 // Wouter
 import { Router } from "wouter";
-import { SearchParamsProvider } from "./src/wouter/index.tsx";
 
 const server = await createServer({
   importMapPath: import.meta.resolve("./importMap.json"),
@@ -15,10 +14,8 @@ function ServerApp({ context }: { context: Context }) {
   const requestUrl = new URL(context.req.url);
 
   return (
-    <Router ssrPath={requestUrl.pathname}>
-      <SearchParamsProvider value={requestUrl.searchParams}>
-        <App />
-      </SearchParamsProvider>
+    <Router ssrPath={requestUrl.pathname} ssrSearch={requestUrl.searchParams}>
+      <App />
     </Router>
   );
 }

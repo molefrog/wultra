@@ -2,7 +2,7 @@ import useAsset from "ultra/hooks/use-asset.js";
 import { Route, Switch } from "wouter";
 
 import { Header } from "./components/Header.tsx";
-import { RouteWithLocale } from "./wouter/RouteWithLocale.tsx";
+import { RouteWithLocale } from "./components/RouteWithLocale.tsx";
 
 // pages
 import HomePage from "./pages/Home.tsx";

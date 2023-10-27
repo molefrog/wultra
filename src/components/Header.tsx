@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback } from "react";
 import { useLocation } from "wouter";
 
-import { Locale, useLocale } from "../wouter/RouteWithLocale.tsx";
+import { Locale, useLocale } from "../components/RouteWithLocale.tsx";
 import { ActiveLink } from "./ActiveLink.tsx";
 
 const HEADING_TRANSLATIONS: Record<Locale, string> = {

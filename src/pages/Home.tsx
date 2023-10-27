@@ -1,4 +1,8 @@
+import { useSearch } from "wouter";
+
 export const Home = () => {
+  const search = useSearch();
+
   return (
     <>
       <h1>Welcome</h1>
