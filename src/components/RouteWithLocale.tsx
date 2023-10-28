@@ -1,4 +1,4 @@
-import { useLocation, Router, useRouter } from "wouter";
+import { useLocation, Router } from "wouter";
 import { ReactNode, createContext, useContext } from "react";
 
 // List of supported locales
@@ -33,7 +33,7 @@ export const RouteWithLocale = ({
 
   return (
     <LocaleContext.Provider value={currentLocale}>
-      <Router key={currentLocale} base={routerBase} parent={useRouter()}>
+      <Router key={currentLocale} base={routerBase}>
         {children}
       </Router>
     </LocaleContext.Provider>
