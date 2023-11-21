@@ -14,7 +14,7 @@ export const ActiveLink = (props: ActiveLinkProps) => {
   const [isActive] = useRoute(pattern);
 
   return (
-    <Link {...props}>
+    <Link {...props} asChild>
       <a href={props.href} className={isActive ? "active" : ""}>
         {props.boldWhenActive && isActive ? <b>{props.children}</b> : props.children}
       </a>

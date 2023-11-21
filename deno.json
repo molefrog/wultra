@@ -7,7 +7,7 @@
   },
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"],
-    "jsx": "react-jsx",
+    "jsx": "react-jsxdev",
     "jsxImportSource": "react"
   },
   "fmt": {

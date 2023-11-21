@@ -1,10 +1,10 @@
 {
   "imports": {
-    "react": "https://esm.sh/v134/react@18.2.0",
-    "react/": "https://esm.sh/v134/react@18.2.0/",
-    "react-dom": "https://esm.sh/v134/react-dom@18.2.0",
-    "react-dom/server": "https://esm.sh/v134/react-dom@18.2.0/server",
-    "react-dom/client": "https://esm.sh/v134/react-dom@18.2.0/client",
+    "react": "https://esm.sh/v134/react@18.2.0?dev",
+    "react/": "https://esm.sh/v134/react@18.2.0&dev/",
+    "react-dom": "https://esm.sh/v134/react-dom@18.2.0?dev",
+    "react-dom/server": "https://esm.sh/v134/react-dom@18.2.0&dev/server",
+    "react-dom/client": "https://esm.sh/v134/react-dom@18.2.0&dev/client",
     "wouter": "https://esm.sh/v134/wouter@3.0.0-dev.2af8aab?external=react",
     "ultra/": "https://deno.land/x/ultra@v2.3.8/"
   }
