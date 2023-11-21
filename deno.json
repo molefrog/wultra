@@ -6,9 +6,9 @@
     "start": "ULTRA_MODE=production deno run -A --no-remote ./server.js"
   },
   "compilerOptions": {
-    "jsx": "react-jsxdev",
-    "jsxImportSource": "react",
-    "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
+    "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "fmt": {
     "files": { "exclude": [".ultra"] }

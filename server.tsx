@@ -14,7 +14,7 @@ function ServerApp({ context }: { context: Context }) {
   const requestUrl = new URL(context.req.url);
 
   return (
-    <Router ssrPath={requestUrl.pathname} ssrSearch={requestUrl.searchParams}>
+    <Router ssrPath={requestUrl.pathname} ssrSearch={requestUrl.search}>
       <App />
     </Router>
   );
@@ -24,7 +24,7 @@ server.get("*", async (context) => {
   /**
    * Render the request
    */
-  let result = await server.render(<ServerApp context={context} />);
+  const result = await server.render(<ServerApp context={context} />);
 
   return context.body(result, 200, {
     "content-type": "text/html; charset=utf-8",

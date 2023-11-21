@@ -1,5 +1,5 @@
 import { useLocation, Router } from "wouter";
-import { ReactNode, createContext, useContext } from "react";
+import { FunctionComponent, PropsWithChildren, createContext, useContext } from "react";
 
 // List of supported locales
 const locales = ["en", "se", "ge", "jp"] as const;
@@ -18,13 +18,11 @@ const ROUTE_REGEXP = new RegExp(`^\/(${locales.join("|")})`, "i");
  *    /en/about -> locale=en,      base=/en, localpath=/about
  *    /about    -> locale=default, base="",  localpath=/about
  */
-export const RouteWithLocale = ({
-  children,
-  defaultLocale,
-}: {
-  children: ReactNode;
-  defaultLocale: Locale;
-}) => {
+export const RouteWithLocale: FunctionComponent<
+  PropsWithChildren<{
+    defaultLocale: Locale;
+  }>
+> = ({ children, defaultLocale }) => {
   const [location] = useLocation();
   const [, locale] = ROUTE_REGEXP.exec(location) ?? [];
 
